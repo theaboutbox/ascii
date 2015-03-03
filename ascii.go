@@ -16,10 +16,10 @@ const GrayMeta = `  _____ _____        __     ____  __ ______ _______
  `
 
 // PrintBanner prints a command line banner to w.
-func PrintBanner(w io.Writer, name string, version float32) {
+func PrintBanner(w io.Writer, name string, version interface{}) {
 	w.Write([]byte(GrayMeta))
 	fmt.Fprintln(w)
-	fmt.Fprintf(w, "\t%s (v%g)\twww.graymeta.com", name, version)
+	fmt.Fprintf(w, "\t%s (v%v)\twww.graymeta.com", name, version)
 	fmt.Fprintln(w)
 	fmt.Fprintln(w)
 }
